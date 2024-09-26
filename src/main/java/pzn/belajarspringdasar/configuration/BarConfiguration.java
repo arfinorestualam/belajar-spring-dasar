@@ -1,4 +1,4 @@
-package pzn.belajarspringdasar;
+package pzn.belajarspringdasar.configuration;
 
 //belajar import, dimana configuration bisa di import ke yang lain
 //dan lebih dari 1 import
