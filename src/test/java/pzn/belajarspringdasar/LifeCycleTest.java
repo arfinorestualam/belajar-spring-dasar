@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pzn.belajarspringdasar.data.Connection;
+import pzn.belajarspringdasar.data.Server;
 
 public class LifeCycleTest {
 
@@ -30,5 +31,10 @@ public class LifeCycleTest {
         //menjadi ConfigurableApplicationContext
         //lalu teardown menggunakan aftereach
         Connection connection = applicationContext.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer() {
+        Server server = applicationContext.getBean(Server.class);
     }
 }
