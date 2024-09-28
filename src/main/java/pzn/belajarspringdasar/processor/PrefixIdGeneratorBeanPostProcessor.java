@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Slf4j
 @Component
-public class IdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered {
+public class PrefixIdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered {
     //bisa pake postProcessBefore jika tidak peduli dengan proses yang terjadi
     //jika ingin aman pake postProcessAfter
 
@@ -21,11 +21,11 @@ public class IdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered 
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info("Id Generator Processor for Bean {}", beanName);
+        log.info("Prefix Id Generator Processor for Bean {}", beanName);
         if (bean instanceof IdAware) {
             IdAware idAware = (IdAware) bean;
-            idAware.setId(UUID.randomUUID().toString());
-            log.info("set id generator for bean {}", beanName);
+            idAware.setId("PZN-" + idAware.getId());
+            log.info("set Prefix id generator for bean {}", beanName);
         }
 
         return bean;
@@ -33,6 +33,6 @@ public class IdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered 
 
     @Override
     public int getOrder() {
-        return -1;
+        return 2;
     }
 }
