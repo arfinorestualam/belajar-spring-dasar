@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import pzn.belajarspringdasar.data.Foo;
+import pzn.belajarspringdasar.listener.AppStartingListener;
+
+import java.util.List;
 
 @SpringBootApplication
 public class FooAplication {
@@ -27,6 +30,7 @@ public class FooAplication {
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(FooAplication.class);
         app.setBannerMode(Banner.Mode.OFF);
+        app.setListeners(List.of(new AppStartingListener()));
 
         ConfigurableApplicationContext context = app.run(args);
 
