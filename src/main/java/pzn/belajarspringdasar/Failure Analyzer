@@ -1,0 +1,6 @@
+Jika merunning aplikasi di springboot (FooApplicationTest), kesalahan di dalam
+kelas akan otomatis di analisa oleh springboot, sehingga kita bisa mengetahui
+error apa yang terjadi. Dan apa tindakan yang harus di lakukan.
+
+Jika kita melakukan running app tanpa sprinboot, akan terjadi error, namun tidak
+ada analisa kenapa errornya, sehingga perlu menebak apa yang salah.
