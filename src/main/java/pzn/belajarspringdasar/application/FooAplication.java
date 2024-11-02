@@ -1,5 +1,6 @@
 package pzn.belajarspringdasar.application;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -14,9 +15,22 @@ public class FooAplication {
         return new Foo();
     }
 
+//    public static void main(String[] args) {
+//        ConfigurableApplicationContext applicationContext = SpringApplication.run(FooAplication.class, args);
+//        Foo foo = applicationContext.getBean(Foo.class);
+//        System.out.println(foo);
+//    }
+
+    //custom spring application
+    //baca dokumentasi untuk tau bisa memodifikasi apa saja
+
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(FooAplication.class, args);
-        Foo foo = applicationContext.getBean(Foo.class);
+        SpringApplication app = new SpringApplication(FooAplication.class);
+        app.setBannerMode(Banner.Mode.OFF);
+
+        ConfigurableApplicationContext context = app.run(args);
+
+        Foo foo = context.getBean(Foo.class);
         System.out.println(foo);
     }
 }
