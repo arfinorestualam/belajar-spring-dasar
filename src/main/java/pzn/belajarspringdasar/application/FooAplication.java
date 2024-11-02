@@ -10,6 +10,9 @@ import pzn.belajarspringdasar.listener.AppStartingListener;
 
 import java.util.List;
 
+//springbootapplication ada scan, dimana jika ditaruh di luar folder application
+//bisa mengscan semua bean yang ada disana, makanya diletakkan di folder application
+//agar tidak membaca scan yang tidak diperlukan.
 @SpringBootApplication
 public class FooAplication {
 
