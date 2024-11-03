@@ -1,0 +1,17 @@
+Springboot plugin :
+    1. Saat membuat project spring boot, secara otomatis terdapat spring-boot-plugin
+        di project maven kita.
+    2. Plugin mempermudah untuk menjalankan aplikasi spring kita saat development.
+    3. Gunakan perintah : mvn spring-boot:run untuk menjalankan.
+    4. Pastikan hanya ada satu main class (private main args) di aplikasi spring boot,
+        agar tidak ada error.
+
+Distribution File :
+    1. Jika ingin menjalankan di production, kita harus membuat distribution file.
+    2. Springboot plugin juga menyediakan cara untuk membuat disbrution file untuk aplikasi spring boot.
+    3. Plugin ini akan mendeteksi main class, lalu membundle aplikasi bersama dengan dependency yang dibutuhkan
+        dalam 1 jar yang sama.
+    4. Seperti menjalankan aplikasi di development, hanya boleh ada 1 main class ketika membuat distribution file.
+    5. Cukup jalankan perintah : mvn package
+    6. Secara otomatis akan membuat single jar application.
+    7. Lalu deploy single jar ke server.
